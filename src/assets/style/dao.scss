@@ -1,0 +1,140 @@
+.dao {
+  height: auto;
+  position: relative;
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    color: black;
+  }
+
+  .content {
+    display: flex;
+    margin-top: -20px;
+    padding: 0px 10px;
+    text-align: center;
+
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      margin-top: -10px;
+    }
+
+    .menu-box {
+      padding-top: 90px;
+      width: 40%;
+      height: auto;
+      text-align: center;
+      background-image: url("../img/flag.png");
+      background-size: 100% 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      @media only screen and (max-width: 1600px) {
+        gap: 15px;
+      }
+
+      @media only screen and (max-width: 800px) {
+        padding-top: 8vw;
+        gap: 10px;
+        height: 55vw;
+        width: 80%;
+        margin: auto;
+      }
+
+      @media only screen and (max-width: 600px) {
+        padding-top: 10vw;
+        height: 70vw;
+        gap: 5px;
+        margin: auto;
+      }
+    }
+
+    .pic-box {
+      width: 60%;
+      flex-direction: column;
+      padding-top: calc(350px - 15vw);
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+
+      @media only screen and (max-width: 1300px) {
+        padding-top: calc(370px - 10vw);
+      }
+
+      @media only screen and (max-width: 800px) {
+        padding-top: 0px;
+        margin-top: -200px;
+        width: 70%;
+        margin: auto;
+      }
+
+      .bird {
+        width: 15%;
+
+        @media only screen and (max-width: 800px) {
+          position: absolute;
+          top: -10vw;
+        }
+      }
+
+      .berserkers {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .backbutton {
+      margin-left: 20px;
+      cursor: pointer;
+
+      @media only screen and (max-width: 800px) {
+        width: 100px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        width: 150px;
+        margin-left: 0px;
+      }
+    }
+
+    .link-box {
+      align-items: center;
+      display: flex;
+      margin-right: 20px;
+      gap: 15px;
+
+      @media only screen and (max-width: 600px) {
+        margin-right: 0px;
+        gap: 10px;
+      }
+
+      .link-icon {
+        width: 70px;
+        cursor: pointer;
+
+        @media only screen and (max-width: 800px) {
+          width: 50px;
+        }
+      }
+    }
+  }
+}
