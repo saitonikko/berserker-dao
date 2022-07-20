@@ -1,0 +1,132 @@
+.claim {
+  height: auto;
+  position: relative;
+
+  .content {
+    display: flex;
+    margin-top: -20px;
+    padding: 0px 10px;
+    text-align: center;
+
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      margin-top: -10px;
+    }
+
+    .left-box {
+      padding-top: 6vw;
+      width: 45%;
+      text-align: center;
+      background-image: url("../img/flag.png");
+      background-size: 100% 100%;
+
+      @media only screen and (max-width: 800px) {
+        padding-top: 10vw;
+        height: 53vw;
+        width: 80%;
+        margin: auto;
+      }
+      @media only screen and (max-width: 600px) {
+        padding-top: 14vw;
+        height: 100vw;
+        width: 100%;
+      }
+
+      .avatar {
+        width: 15vw;
+        @media only screen and (max-width: 800px) {
+          width: 20vw;
+        }
+        @media only screen and (max-width: 600px) {
+          width: 40vw;
+        }
+      }
+
+      .userinfo-box {
+        margin-top: 1vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1vw;
+
+        .username-box {
+          .username {
+            font-weight: 400;
+            font-family: "Comic Runes";
+            color: white;
+            font-size: 2.5vw;
+
+            @media only screen and (max-width: 800px) {
+              font-size: 4vw;
+            }
+            @media only screen and (max-width: 600px) {
+              font-size: 6vw;
+            }
+          }
+          .edit {
+            font-size: 10px;
+            margin-top: 10px;
+            color: white;
+            text-align: left;
+            cursor: pointer;
+          }
+        }
+
+        .claintoken {
+          width: 30%;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .right-box {
+      width: 55%;
+      text-align: center;
+      margin-inline: auto;
+
+      .boss {
+        width: 50%;
+        text-align: center;
+
+        @media only screen and (max-width: 800px) {
+          width: 60%;
+          margin-top: -5vw;
+        }
+        @media only screen and (max-width: 600px) {
+          position: fixed;
+          bottom: 0;
+          width: 60%;
+          right: 20vw;
+        }
+      }
+    }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .backbutton {
+      margin-left: 20px;
+      cursor: pointer;
+
+      @media only screen and (max-width: 800px) {
+        width: 100px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        width: 150px;
+        margin-left: 0px;
+      }
+    }
+  }
+}

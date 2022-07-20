@@ -1,0 +1,255 @@
+.pending {
+  height: auto;
+  position: relative;
+
+  .content {
+    display: flex;
+    margin-top: -20px;
+    padding: 0px 10px;
+    text-align: center;
+
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      margin-top: -10px;
+    }
+
+    .left-box {
+      width: 50%;
+      height: auto;
+      text-align: center;
+
+      @media screen and (max-width: 800px) {
+        width: 100%;
+      }
+
+      .pending-proposal {
+        margin-top: 40px;
+        width: 80%;
+        background: rgba(60, 60, 59, 0.8);
+        box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(19px);
+        border-radius: 20px;
+        margin-inline: auto;
+        padding: 1.5vw 2vw;
+
+        @media screen and (max-width: 800px) {
+          width: 90%;
+          backdrop-filter: unset;
+        }
+
+        .title {
+          font-size: 30px;
+          font-family: "Comic Runes";
+          font-weight: 400;
+          color: #ffffff;
+          text-align: left;
+          margin-bottom: 20px;
+
+          @media screen and (max-width: 800px) {
+            text-align: center;
+          }
+        }
+
+        .text {
+          width: 90%;
+          font-weight: 400;
+          font-size: 15px;
+          color: #ffffff;
+          opacity: 0.6;
+          text-align: left;
+          margin-bottom: 30px;
+
+          @media screen and (max-width: 800px) {
+            text-align: center;
+            font-size: 13px;
+            margin: auto;
+            margin-bottom: 5vw;
+          }
+        }
+
+        .scroll {
+          height: 400px;
+          overflow-y: auto;
+
+          @media only screen and (max-width: 800px) {
+            margin-bottom: 3vw;
+          }
+
+          &::-webkit-scrollbar {
+            width: 10px;
+            border-radius: 50%;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: rgb(217, 217, 217);
+            border-radius: 5px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: rgba(217, 217, 217, 0.3);
+            border-radius: 5px;
+          }
+
+          .card-container {
+            width: 100%;
+            background: url("../img//card-bg.png");
+            background-size: 100% 100%;
+            padding: 40px 0vw 70px;
+            margin-left: -1vw;
+            margin-top: -10px;
+
+            @media screen and (max-width: 1200px) {
+              margin-top: -25px;
+            }
+
+            @media screen and (max-width: 600px) {
+              padding-top: 60px;
+              width: 100%;
+            }
+
+            .card-title {
+              color: #000000;
+              font-family: "Comic Runes";
+              font-weight: 400;
+              font-size: 20px;
+              margin-bottom: 15px;
+
+              @media screen and (max-width: 600px) {
+                font-size: 25px;
+              }
+            }
+
+            .card-content {
+              margin-inline: auto;
+              width: 85%;
+
+              .line {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 7px;
+
+                .progress-text {
+                  font-family: "Comic Runes";
+                  font-weight: 400;
+                  color: #000000;
+                  font-size: 20px;
+
+                  @media screen and (max-width: 600px) {
+                    display: none;
+                  }
+                }
+              }
+            }
+
+            .first {
+              margin-top: 20px;
+            }
+
+            .progress-text-mobile {
+              font-family: "Comic Runes";
+              font-weight: 400;
+              display: none;
+
+              @media screen and (max-width: 600px) {
+                font-size: 20px;
+                line-height: 30px;
+                margin-left: 5vw;
+                display: block;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right-box {
+      width: 50%;
+      flex-direction: column;
+      padding-top: calc(350px - 15vw);
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+
+      @media only screen and (max-width: 1300px) {
+        padding-top: calc(370px - 10vw);
+      }
+
+      @media only screen and (max-width: 800px) {
+        padding-top: 0px;
+        margin-top: -200px;
+        width: 70%;
+        margin: auto;
+      }
+
+      .bird {
+        width: 15%;
+
+        @media only screen and (max-width: 800px) {
+          display: none;
+        }
+      }
+
+      .berserkers {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      @media only screen and (max-width: 600px) {
+        text-align: center;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      position: static;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .backbutton {
+      margin-left: 20px;
+      cursor: pointer;
+
+      @media only screen and (max-width: 800px) {
+        width: 100px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        width: 150px;
+        margin: auto;
+      }
+    }
+
+    .link-box {
+      align-items: center;
+      display: flex;
+      margin-right: 20px;
+      gap: 15px;
+
+      @media only screen and (max-width: 600px) {
+        margin-right: 0px;
+        gap: 10px;
+      }
+
+      .link-icon {
+        width: 70px;
+        cursor: pointer;
+
+        @media only screen and (max-width: 800px) {
+          width: 50px;
+        }
+      }
+    }
+  }
+}

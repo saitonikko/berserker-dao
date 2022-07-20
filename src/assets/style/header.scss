@@ -1,0 +1,72 @@
+.header {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 800px) {
+    height: 80px;
+  }
+
+  .flex-box {
+    display: flex;
+    align-items: center;
+  }
+
+  .dao-logo {
+    margin: 0px 40px;
+    height: 50px;
+    width: 100px;
+    height: 100px;
+
+    @media only screen and (max-width: 1000px) {
+      margin-left: 15px;
+    }
+
+    @media only screen and (max-width: 800px) {
+      height: 60px;
+      width: 60px;
+    }
+  }
+
+  .logo-title {
+    margin-left: -15px;
+    margin-top: -20px;
+    font-family: "Comic Runes";
+    font-size: 35px;
+    font-weight: 500;
+
+    @media only screen and (max-width: 800px) {
+      margin-left: -25px;
+      margin-top: -15px;
+      font-size: 25px;
+    }
+
+  }
+
+  .connectwallet-button {
+    font-size: 30px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    font-family: "Comic Runes";
+    color: black;
+    padding-top: 5px;
+    margin-right: 60px;
+    width: 270px;
+    height: 50px;
+    background: url("../img//buttonconnectwallet.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+
+    @media only screen and (max-width: 1000px) {
+      margin-right: 10px;
+    }
+    @media only screen and (max-width: 800px) {
+      width: 150px;
+      height: 35px;
+      font-size: 20px;
+      margin-top: -5px;
+    }
+  }
+}
