@@ -1,4 +1,4 @@
-.claim {
+.proposals {
   height: auto;
   position: relative;
 
@@ -13,91 +13,78 @@
       margin-top: -10px;
     }
 
-    .left-box {
-      padding-top: 6vw;
-      width: 45%;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      width: 100%;
+      margin-inline: auto;
+      display: flex;
+      justify-content: center;
+      color: black;
+    }
+
+    .menu-box {
+      padding-top: 90px;
+      width: 40%;
+      height: auto;
       text-align: center;
       background-image: url("../img/flag.png");
       background-size: 100% 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      @media only screen and (max-width: 1600px) {
+        gap: 15px;
+      }
 
       @media only screen and (max-width: 800px) {
-        padding-top: 10vw;
-        height: 53vw;
+        padding-top: 8vw;
+        gap: 10px;
+        height: 55vw;
         width: 80%;
         margin: auto;
       }
+
       @media only screen and (max-width: 600px) {
-        padding-top: 14vw;
-        height: 100vw;
-        width: 100%;
-      }
-
-      .avatar {
-        width: 15vw;
-        @media only screen and (max-width: 800px) {
-          width: 20vw;
-        }
-        @media only screen and (max-width: 600px) {
-          width: 40vw;
-        }
-      }
-
-      .userinfo-box {
-        margin-top: 1vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1vw;
-
-        .username-box {
-          .username {
-            font-weight: 400;
-            font-family: "Comic Runes";
-            color: white;
-            font-size: 2.5vw;
-
-            @media only screen and (max-width: 800px) {
-              font-size: 4vw;
-            }
-            @media only screen and (max-width: 600px) {
-              font-size: 6vw;
-            }
-          }
-          .edit {
-            font-size: 10px;
-            margin-top: 10px;
-            color: white;
-            text-align: left;
-            cursor: pointer;
-          }
-        }
-
-        .claintoken {
-          width: 30%;
-          cursor: pointer;
-        }
+        padding-top: 10vw;
+        height: 70vw;
+        gap: 5px;
+        margin: auto;
       }
     }
 
-    .right-box {
-      width: 55%;
-      text-align: center;
-      margin-inline: auto;
+    .pic-box {
+      width: 60%;
+      flex-direction: column;
+      padding-top: calc(350px - 15vw);
+      display: flex;
+      align-items: flex-end;
+      position: relative;
 
-      .boss {
-        width: 50%;
-        text-align: center;
+      @media only screen and (max-width: 1300px) {
+        padding-top: calc(370px - 10vw);
+      }
+
+      @media only screen and (max-width: 800px) {
+        padding-top: 0px;
+        margin-top: -200px;
+        width: 70%;
+        margin: auto;
+      }
+
+      .bird {
+        width: 15%;
 
         @media only screen and (max-width: 800px) {
-          width: 60%;
-          margin-top: -5vw;
+          position: absolute;
+          top: -10vw;
         }
-        @media only screen and (max-width: 600px) {
-          position: fixed;
-          bottom: 0;
-          width: 60%;
-          right: 20vw;
-        }
+      }
+
+      .berserkers {
+        width: 100%;
       }
     }
   }
@@ -109,10 +96,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @media only screen and (max-width: 800px) {
-      display: none;
-    }
 
     a {
       @media only screen and (max-width: 600px) {
@@ -144,7 +127,6 @@
       display: flex;
       margin-right: 20px;
       gap: 15px;
-      visibility: hidden;
 
       @media only screen and (max-width: 600px) {
         margin-right: 0px;

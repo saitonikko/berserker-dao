@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/style/claim.scss';
-import DaoButton from '../component/daobutton';
+import Eargle from "../assets/img/eargle.png"
 import Medium from "../assets/img/medium.png"
 import Telegram from "../assets/img/telegram.png"
 import Twitter from "../assets/img/twitter.png"
@@ -39,6 +39,12 @@ export default function Claim() {
 
       <div className='footer'>
         <Link to='/'><img alt='' src={BackButton} className='backbutton'></img></Link>
+        <img className='eargle' src={Eargle} alt=''></img>
+        <div className='link-box'>
+          <a><img alt='' src={Medium} className='link-icon'></img></a>
+          <a><img alt='' src={Telegram} className='link-icon'></img></a>
+          <a><img alt='' src={Twitter} className='link-icon'></img></a>
+        </div>
       </div>
 
       {openClaim ? <ClaimTokenWindow setOpenClaim={setOpenClaim} />

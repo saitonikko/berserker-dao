@@ -9,6 +9,7 @@ import Bird from "../assets/img/bird.png"
 import Berserkers from "../assets/img/berserkers.png"
 import Upload from "../assets/img/upload.png"
 import Submit from "../assets/img/submit.png"
+import Eargle from "../assets/img/eargle.png"
 
 
 export default function Create() {
@@ -42,6 +43,7 @@ export default function Create() {
 
       <div className='footer'>
         <Link to='/'><img alt='' src={BackButton} className='backbutton'></img></Link>
+        <img className='eargle' src={Eargle} alt=''></img>
         <div className='link-box'>
           <a><img alt='' src={Medium} className='link-icon'></img></a>
           <a><img alt='' src={Telegram} className='link-icon'></img></a>

@@ -9,6 +9,7 @@ import Bird from "../assets/img/bird.png"
 import Berserkers from "../assets/img/berserkers.png"
 import Approve from "../assets/img/approve.png"
 import Circle from "../assets/img/circle.png"
+import Eargle from "../assets/img/eargle.png"
 
 
 export default function Success() {
@@ -55,6 +56,7 @@ export default function Success() {
 
       <div className='footer'>
         <Link to='/'><img alt='' src={BackButton} className='backbutton'></img></Link>
+        <img className='eargle' src={Eargle} alt=''></img>
         <div className='link-box'>
           <a><img alt='' src={Medium} className='link-icon'></img></a>
           <a><img alt='' src={Telegram} className='link-icon'></img></a>
