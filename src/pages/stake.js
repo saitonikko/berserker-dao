@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/style/dao.scss';
-import DaoButton from '../component/daobutton';
+import '../assets/style/stake.scss';
 import Medium from "../assets/img/medium.png"
 import Telegram from "../assets/img/telegram.png"
 import Twitter from "../assets/img/twitter.png"
@@ -9,23 +8,34 @@ import BackButton from "../assets/img/backbutton.png"
 import Bird from "../assets/img/bird.png"
 import Berserkers from "../assets/img/berserkers.png"
 import Eargle from "../assets/img/eargle.png"
+import Approve from "../assets/img/stake-approve.png"
+import WithDraw from "../assets/img/withdraw.png"
 
 
-export default function Dao() {
+export default function Stake() {
 
   return (
-    <div className='dao'>
+    <div className='stake'>
 
       <div className='content'>
 
-        <div className='menu-box'>
-          <a href='https://telegram.org/'><DaoButton content='BERSERKER HATI' /></a>
-          <Link to='/proposals'><DaoButton content='PROPOSALS' /></Link>
-          <a href='http://Ribeswap.org'><DaoButton content='CENTRE OF TRADE' /></a>
-          <Link to='/stake'><DaoButton content='STAKING' /></Link>
+        <div className='left-box'>
+          <div className='stake-hati'>
+            <div className='title'>STAKE HATI</div>
+            <div className='text'>Balance: 1000</div>
+            <div className='balance-box'>
+              <input className='balance-box-input'></input>
+              <div className='max-number'>1000</div>
+            </div>
+            <div className='stake-picbox'><img className='stake-pic' src={Approve} alt=''></img></div>
+
+            <div className='text'>HATI Balance: 1000 HATI</div>
+            <input className='balance-input' ></input>
+            <div className='stake-picbox'><img className='stake-pic' src={WithDraw} alt=''></img></div>
+          </div>
         </div>
 
-        <div className='pic-box'>
+        <div className='right-box'>
           <img className='bird' src={Bird} alt=''></img>
           <img className='berserkers' src={Berserkers} alt=''></img>
         </div>
@@ -41,6 +51,6 @@ export default function Dao() {
         </div>
       </div>
 
-    </div >
+    </div>
   )
 }

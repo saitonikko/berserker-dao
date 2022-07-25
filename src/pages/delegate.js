@@ -7,6 +7,7 @@ import Twitter from "../assets/img/twitter.png"
 import BackButton from "../assets/img/backbutton.png"
 import Bird from "../assets/img/bird.png"
 import Berserkers from "../assets/img/berserkers.png"
+import Eargle from "../assets/img/eargle.png"
 import DelegateVote from "../assets/img/delegate.png"
 
 
@@ -48,6 +49,7 @@ export default function Delegate() {
 
       <div className='footer'>
         <Link to='/'><img alt='' src={BackButton} className='backbutton'></img></Link>
+        <img className='eargle' src={Eargle} alt=''></img>
         <div className='link-box'>
           <a><img alt='' src={Medium} className='link-icon'></img></a>
           <a><img alt='' src={Telegram} className='link-icon'></img></a>

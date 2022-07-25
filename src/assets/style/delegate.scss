@@ -115,6 +115,10 @@
             @media screen and (max-width: 1300px) {
               width: 60%;
             }
+
+            @media screen and (max-width: 600px) {
+              width: 80%;
+            }
           }
         }
       }
@@ -230,7 +234,6 @@
     }
 
     @media only screen and (max-width: 600px) {
-      position: static;
       flex-direction: column;
       align-items: center;
     }
@@ -267,6 +270,14 @@
         @media only screen and (max-width: 800px) {
           width: 50px;
         }
+      }
+    }
+
+    .eargle {
+      margin-top: -100px;
+
+      @media only screen and (max-width: 600px) {
+        display: none;
       }
     }
   }

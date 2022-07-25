@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/style/dao.scss';
+import '../assets/style/proposals.scss';
 import DaoButton from '../component/daobutton';
 import Medium from "../assets/img/medium.png"
 import Telegram from "../assets/img/telegram.png"
@@ -11,18 +11,17 @@ import Berserkers from "../assets/img/berserkers.png"
 import Eargle from "../assets/img/eargle.png"
 
 
-export default function Dao() {
+export default function Proposals() {
 
   return (
-    <div className='dao'>
+    <div className='proposals'>
 
       <div className='content'>
 
         <div className='menu-box'>
-          <a href='https://telegram.org/'><DaoButton content='BERSERKER HATI' /></a>
-          <Link to='/proposals'><DaoButton content='PROPOSALS' /></Link>
-          <a href='http://Ribeswap.org'><DaoButton content='CENTRE OF TRADE' /></a>
-          <Link to='/stake'><DaoButton content='STAKING' /></Link>
+          <Link to='/create'><DaoButton content='CREATE PROPOSALS' /></Link>
+          <Link to='/pending'><DaoButton content='PENDING PROPOSALS' /></Link>
+          <Link to='/closed'><DaoButton content='CLOSED PROPOSALS' /></Link>
         </div>
 
         <div className='pic-box'>
