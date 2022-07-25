@@ -274,6 +274,7 @@
     }
 
     @media only screen and (max-width: 600px) {
+      position: static;
       flex-direction: column;
       align-items: center;
     }
@@ -287,6 +288,7 @@
       }
 
       @media only screen and (max-width: 600px) {
+        position: static;
         width: 150px;
         margin: auto;
       }
