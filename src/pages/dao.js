@@ -22,6 +22,7 @@ export default function Dao() {
           <a href='https://telegram.org/'><DaoButton content='BERSERKER HATI' /></a>
           <Link to='/proposals'><DaoButton content='PROPOSALS' /></Link>
           <a href='http://Ribeswap.org'><DaoButton content='CENTRE OF TRADE' /></a>
+          <Link to='/claim'><DaoButton content='CLAIM TOKENS' /></Link>
           <Link to='/stake'><DaoButton content='STAKING' /></Link>
         </div>
 
