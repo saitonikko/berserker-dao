@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { getClaimContract } from "../utils/contractFunctions";
 import "../assets/style/component.scss"
 import Close from "../assets/img/close.png"
 import RightArrow from "../assets/img/right-arrow.png"
@@ -8,7 +9,36 @@ import ClaimToken from "../assets/img/claim-token.png"
 import WholeBoss from "../assets/img/whole.png"
 
 
-export default function ClaimTokenWindow({ setOpenClaim }) {
+export default function ClaimTokenWindow({ setOpenClaim, account }) {
+
+  const [isBtnDisabled, setIsBtnDisabled] = useState(false);
+
+  const claimTokens = async () => {
+    if (!account) {
+      alert("Please connect wallet!")
+      return;
+    }
+    setIsBtnDisabled(true);
+    try {
+      const contract = await getClaimContract();
+      console.log(contract);
+      await contract.methods.claimUSDC().send({ from: account });
+      alert("Successfully claimed!");
+    } catch (err) {
+      alert("Something went wrong!");
+      console.log(err);
+    }
+    setIsBtnDisabled(false);
+  }
+
+  // useEffect(() => {
+  //   if (account) {
+  //     setIsBtnDisabled(false);
+  //   } else {
+  //     setIsBtnDisabled(true);
+  //   }
+  // }, [account])
+
   return (
     <div className='claimtokenwinodw'>
       <div className='token-container'>
@@ -22,9 +52,10 @@ export default function ClaimTokenWindow({ setOpenClaim }) {
         </div>
         <div className='user-name'>USERNAME 32</div>
         <div className='edit'>Edit Username</div>
-        <img src={ClaimToken} alt='' className='claim-token'></img>
+        <button className="claim-btn" onClick={claimTokens} disabled={isBtnDisabled}>
+          <img src={ClaimToken} alt='' className='claim-token'></img>
+        </button>
         <img src={WholeBoss} alt='' className='whole-boss'></img>
-        
       </div>
     </div>
   )
