@@ -12,9 +12,11 @@ import ClaimToken from "../assets/img/claim.png"
 import ClaimTokenWindow from "../component/claimtokenwindow"
 
 
-export default function Claim() {
+export default function Claim({account}) {
 
-  const [openClaim, setOpenClaim] = useState(false)
+  const [openClaim, setOpenClaim] = useState(false);
+
+  
 
   return (
     <div className='claim'>
@@ -28,7 +30,7 @@ export default function Claim() {
               <div className='username'>USERNAME 32</div>
               <div className='edit'>Edit Username</div>
             </div>
-            <img alt='' src={ClaimToken} className='claintoken' onClick={() => { setOpenClaim(true) }}></img>
+            <img alt='' src={ClaimToken} className='claimtoken' onClick={() => { setOpenClaim(true) }}></img>
           </div>
         </div>
         <div className='right-box'>
@@ -47,7 +49,7 @@ export default function Claim() {
         </div>
       </div>
 
-      {openClaim ? <ClaimTokenWindow setOpenClaim={setOpenClaim} />
+      {openClaim ? <ClaimTokenWindow setOpenClaim={setOpenClaim} account={account} />
         : null
       }
 

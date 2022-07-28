@@ -15,4 +15,13 @@ body {
   }
 }
 
+button {
+  border: unset;
+  background: unset;
+  cursor: pointer;
+
+  &:disabled {
+      cursor: not-allowed !important;
+  }
+}
 
