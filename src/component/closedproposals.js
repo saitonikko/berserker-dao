@@ -1,7 +1,7 @@
 import React from 'react';
 import "../assets/style/component.scss"
 import Close from "../assets/img/close.png"
-import Progress from "../component/progress"
+import ProgressPending from "../component/progress-pending"
 import Audit from "../assets/img/audit.png"
 import WhitePaper from "../assets/img/whitepaper.png"
 import Site from "../assets/img/site.png"
@@ -22,11 +22,11 @@ export default function ClosedProposals({ setOpenWindow }) {
           <div className='card-title'>PROPOSAL NAME OF THR PROJECT</div>
           <div className='card-content'>
             <div className='line'>
-              <Progress percent={80} content='APPROVE' />
+              <ProgressPending percent={80} content='APPROVE' />
               <div className='progress-text'>RESULT<span style={{ fontFamily: 'Roboto' }}>:</span> APPROVED</div>
             </div>
             <div className='line'>
-              <Progress percent={20} content='REJECT' />
+              <ProgressPending percent={20} content='REJECT' />
               <div className='progress-text'>CLOSED DATE<span style={{ fontFamily: 'Roboto' }}>:</span> 070012022</div>
             </div>
             <div className='progress-text-mobile first'>RESULT<span style={{ fontFamily: 'Roboto' }}>:</span> APPROVED</div>

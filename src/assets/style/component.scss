@@ -32,7 +32,7 @@
   @media only screen and (max-width: 600px) {
     height: 35px;
     line-height: 30px;
-    width: 40%;
+    width: 50%;
     font-size: 15px;
   }
 }
@@ -242,7 +242,7 @@
   }
 }
 
-.progress {
+.progress-pending {
   width: 45%;
   height: 35px;
   border: 1px solid #000000;
@@ -468,5 +468,47 @@
         }
       }
     }
+  }
+}
+
+.progress-voting {
+  margin-top: 10px;
+  width: 70%;
+  height: 35px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 5px;
+  padding-left: 3px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 600px) {
+    width: 80%;
+    height: 30px;
+  }
+
+  .rectangle {
+    background: #393939;
+    border-radius: 3px;
+    height: 100%;
+    font-family: "Comic Runes";
+    font-weight: 400;
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 30px;
+
+    @media screen and (max-width: 600px) {
+      line-height: 25px;
+    }
+  }
+
+  .number {
+    font-family: "Comic Runes";
+    font-weight: 400;
+    font-size: 18px;
   }
 }
