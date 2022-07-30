@@ -41,15 +41,16 @@ export default function Create({ account }) {
 
   useEffect(async () => {
     if (!account) return;
-    const _NFTBalance = getNFTBalance(account);
+    const _NFTBalance = await getNFTBalance(account);
+    console.log(_NFTBalance);
     setNFTBalance(_NFTBalance);
-  })
+  }, [account])
 
   return (
     <div className='create'>
 
       {
-        NFTBalance === 0
+        Number(NFTBalance) === 0
           ? <>
             <div className='content'>
               <div className='left-box'>
