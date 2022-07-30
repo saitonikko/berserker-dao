@@ -9,13 +9,13 @@ import Closed from './pages/closed';
 import Delegate from './pages/delegate';
 import Stake from './pages/stake';
 import Proposals from './pages/proposals';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 function App() {
 
   const [account, setAccount] = useState(null);
-  
+
   return (
     <>
       <Layout account={account} setAccount={setAccount}>
@@ -23,10 +23,10 @@ function App() {
           <Route index element={<Dao />} />
           <Route path='claim' element={<Claim account={account} />} />
           <Route path='proposals' element={<Proposals />} />
-          <Route path='pending' element={<Pending />} />
-          <Route path='create' element={<Create />} />
+          <Route path='pending' element={<Pending account={account} />} />
+          <Route path='create' element={<Create account={account} />} />
           <Route path='success' element={<Success />} />
-          <Route path='closed' element={<Closed />} />
+          <Route path='closed' element={<Closed account={account}/>} />
           <Route path='delegate' element={<Delegate />} />
           <Route path='stake' element={<Stake />} />
         </Routes>

@@ -1,9 +1,13 @@
+import Web3 from 'web3';
+
+let web3 = new Web3(window.ethereum);
+
 export const connectWallet = async () => {
     if (window.ethereum) {
         try {
             await window.ethereum.request({
                 method: 'wallet_switchEthereumChain',
-                params: [{ chainId: window.web3.utils.toHex(97) }],
+                params: [{ chainId: web3.utils.toHex(97) }],
             });
         } catch (switchError) {
             if (switchError.code === 4902) {
@@ -54,7 +58,7 @@ export const getCurrentWalletConnected = async () => {
             try {
                 await window.ethereum.request({
                     method: 'wallet_switchEthereumChain',
-                    params: [{ chainId: window.web3.utils.toHex(97) }],
+                    params: [{ chainId: web3.utils.toHex(97) }],
                 });
             } catch (switchError) {
                 if (switchError.code === 4902) {

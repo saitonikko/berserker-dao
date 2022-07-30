@@ -104,68 +104,6 @@
           height: 100px;
           align-items: flex-start;
         }
-
-        .provide-box {
-          @extend .name-input;
-          align-items: center;
-          justify-content: space-between;
-          position: relative;
-
-          @media screen and (max-width: 600px) {
-            height: 110px;
-            align-items: flex-end;
-            justify-content: flex-end;
-          }
-
-          div {
-            @media screen and (max-width: 600px) {
-              position: absolute;
-              left: 25px;
-              top: 20px;
-            }
-          }
-
-          .upload {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            z-index: 999;
-
-            @media screen and (max-width: 600px) {
-              align-items: flex-end;
-              margin-bottom: 15px;
-            }
-          }
-        }
-
-        .submit-box {
-          margin-top: 20px;
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-
-          @media screen and (max-width: 800px) {
-            justify-content: center;
-          }
-
-          a {
-            width: 40%;
-            
-            @media screen and (max-width: 1300px) {
-              width: 60%;
-            }
-
-            @media screen and (max-width: 600px) {
-              width: 80%;
-            }
-          }
-
-          .submit {
-            width: 100% !important;
-            cursor: pointer;
-          }
-        }
       }
     }
 
@@ -184,7 +122,7 @@
       @media only screen and (max-width: 800px) {
         padding-top: 0px;
         margin-top: -200px;
-        width: 70%;
+        width: 100%;
         margin: auto;
       }
 
@@ -198,6 +136,96 @@
 
       .berserkers {
         width: 100%;
+
+        @media only screen and (max-width: 800px) {
+          width: 70%;
+          margin-inline: auto;
+        }
+      }
+
+      .right-absolute-box {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 40px;
+
+        @media only screen and (max-width: 800px) {
+          position: unset;
+          margin-bottom: 30px;
+        }
+
+        .create-proposal {
+          width: 80%;
+          margin-inline: auto;
+          background: rgba(60, 60, 59, 0.8);
+          box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.25);
+          backdrop-filter: blur(19px);
+          border-radius: 20px;
+          padding: 1.5vw 2vw;
+
+          @media screen and (max-width: 800px) {
+            width: 90%;
+          }
+
+          .submit-box {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            @media screen and (max-width: 800px) {
+              justify-content: center;
+            }
+
+            .submit {
+              width: 40%;
+              cursor: pointer;
+
+              @media screen and (max-width: 1300px) {
+                width: 60%;
+              }
+
+              @media screen and (max-width: 600px) {
+                width: 70%;
+              }
+            }
+          }
+
+          .proposal-value {
+            font-family: "Roboto";
+            width: calc(100% - 50px);
+            max-width: calc(100% - 50px);
+            min-width: calc(100% - 50px);
+            display: block;
+            background: rgba(217, 217, 217, 0.5);
+            border-radius: 10px;
+            font-weight: 400;
+            font-size: 15px;
+            height: 55px;
+            color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+            border: none;
+            padding-left: 25px;
+            padding-right: 25px;
+
+            @media screen and (max-width: 1000px) {
+              font-size: 12px;
+            }
+          }
+
+          .proposal-taget {
+            @extend .proposal-value;
+            margin-top: 25px;
+          }
+
+          .token-address {
+            @extend .proposal-value;
+            margin-top: 25px;
+          }
+        }
       }
     }
   }
