@@ -33,7 +33,7 @@ export default function Pending({ account }) {
   const [admin, setAdmin] = useState(null)
 
   const loadProposalData = async () => {
-    if(!contract) return;
+    if (!contract) return;
     try {
       let temp1 = [];
       let temp2 = [];
@@ -97,10 +97,10 @@ export default function Pending({ account }) {
 
   const execute = async () => {
     try {
-      await contract.methods.excute(pendingProposalData[selectedProposal].id).send({ from: account });
+      await contract.methods.execute(pendingProposalData[selectedProposal].id).send({ from: account });
       alert("You have canceled!")
     } catch (err) {
-      alert("Data fetch error!");
+      alert("Something went wrong!");
       console.log(err);
     }
     loadProposalData();
@@ -116,9 +116,11 @@ export default function Pending({ account }) {
   }, [contract])
 
   useEffect(async () => {
-    if(!selectedProposal) return;
-    const proposalId = pendingProposalData(selectedProposal).id;
+    console.log(proposalStateData[selectedProposal])
+    if (selectedProposal === null) return;
+    const proposalId = pendingProposalData[selectedProposal].id;
     const _canVote = await contract.methods.canVote(account, proposalId).call();
+    console.log(_canVote, proposalStateData[selectedProposal])
     setCanVote(_canVote);
   }, [selectedProposal])
 
@@ -140,24 +142,24 @@ export default function Pending({ account }) {
 
                   {
                     pendingProposalData?.map((data, index) =>
-                      <div className='card-container' key={index} onClick={() => { setOpenDetail(false); setSelectedProposal(index) }}>
+                      <div className='card-container' key={index} onClick={() => { setOpenDetail(false); setSelectedProposal(index); }}>
                         <div className='card-title'>{data.name}</div>
                         <div className='card-content'>
                           <div className='line'>
 
                             {
-                              (proposalStateData[index] === "Pending" || Number(data.forVotes) + Number(data.againstVote) === 0)
+                              (proposalStateData[index] === "Pending" || Number(data.forVotes) + Number(data.againstVotes) === 0)
                                 ? <ProgressPending percent={0} content='APPROVE' />
-                                : <ProgressPending percent={Number(data.forVotes) / (Number(data.forVotes) + Number(data.againstVote))} content='APPROVE' />
+                                : <ProgressPending percent={(Number(data.forVotes) / (Number(data.forVotes) + Number(data.againstVotes)))} content='APPROVE' />
                             }
 
                             <div className='progress-text'>state&nbsp;<span style={{ fontFamily: 'Roboto' }}>:</span>&nbsp;{proposalStateData[index]}</div>
                           </div>
                           <div className='line'>
                             {
-                              (proposalStateData[index] === "Pending" || Number(data.forVotes) + Number(data.againstVote) === 0)
+                              (proposalStateData[index] === "Pending" || Number(data.forVotes) + Number(data.againstVotes) === 0)
                                 ? <ProgressPending percent={0} content='REJECT' />
-                                : <ProgressPending percent={Number(data.againstVotes) / (Number(data.forVotes) + Number(data.againstVote))} content='REJECT' />
+                                : <ProgressPending percent={Number(data.againstVotes) / (Number(data.forVotes) + Number(data.againstVotes))} content='REJECT' />
                             }
                             {
                               proposalStateData[index] === "Pending"
@@ -195,42 +197,34 @@ export default function Pending({ account }) {
                         <ProgressVoting percent={0} content='REJECT' />
                       </>
                       : <>
-                        <ProgressVoting percent={Number(pendingProposalData[selectedProposal].forVotes) / (Number(pendingProposalData[selectedProposal].againstVotes) + Number(pendingProposalData[selectedProposal].againstVote))} content='APPROVE' />
-                        <ProgressVoting percent={Number(pendingProposalData[selectedProposal].againstVotes) / (Number(pendingProposalData[selectedProposal].againstVotes) + Number(pendingProposalData[selectedProposal].againstVote))} content='REJECT' />
+                        <ProgressVoting percent={Number(pendingProposalData[selectedProposal].forVotes) / (Number(pendingProposalData[selectedProposal].againstVotes) + Number(pendingProposalData[selectedProposal].forVotes))} content='APPROVE' />
+                        <ProgressVoting percent={Number(pendingProposalData[selectedProposal].againstVotes) / (Number(pendingProposalData[selectedProposal].againstVotes) + Number(pendingProposalData[selectedProposal].forVotes))} content='REJECT' />
                       </>
                   }
                 </div>
-
-                {
-                  (proposalStateData[selectedProposal] === "Active" && canVote) &&
-                  <div className='vote-box'>
+                <div className='vote-box'>
+                  {
+                    (proposalStateData[selectedProposal] === "Active" && canVote) &&
                     <img src={Accept} onClick={acceptVote} className='vote' alt=''></img>
-                  </div>
-                }
+                  }
 
-                {
+                  {
 
-                  (account === admin.toLowerCase() || account === pendingProposalData[selectedProposal].proposer?.toLowerCase()) &&
-                  <div className='vote-box'>
+                    (account === admin.toLowerCase() || account === pendingProposalData[selectedProposal].proposer?.toLowerCase()) &&
                     <img src={Cancel} onClick={cancelVote} className='vote' alt=''></img>
-                  </div>
-                }
+                  }
 
-                {
-                  (account === admin.toLowerCase() && proposalStateData[selectedProposal] === "Queued") &&
-                  <div className='vote-box'>
+                  {
+                    (account === admin.toLowerCase() && proposalStateData[selectedProposal] === "Queued") &&
                     <img src={Excute} onClick={execute} className='vote' alt=''></img>
-                  </div>
-                }
+                  }
 
-                {
-                  (proposalStateData[selectedProposal] === "Active" && canVote) &&
-                  <div className='vote-box'>
+                  {
+                    (proposalStateData[selectedProposal] === "Active" && canVote) &&
                     <img src={Reject} onClick={rejectVote} className='vote' alt=''></img>
-                  </div>
-                }
+                  }
 
-
+                </div>
               </div>
           }
 
