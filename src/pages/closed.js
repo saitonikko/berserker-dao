@@ -133,8 +133,8 @@ export default function Closed({ account }) {
                             <ProgressVoting percent={0} content='REJECT' />
                           </>
                           : <>
-                            <ProgressVoting percent={Number(closedProposalData[selectedProposal].forVotes) / (Number(closedProposalData[selectedProposal].againstVotes) + Number(closedProposalData[selectedProposal].againstVote))} content='APPROVE' />
-                            <ProgressVoting percent={Number(closedProposalData[selectedProposal].againstVotes) / (Number(closedProposalData[selectedProposal].againstVotes) + Number(closedProposalData[selectedProposal].againstVote))} content='REJECT' />
+                            <ProgressVoting percent={Number(closedProposalData[selectedProposal].forVotes) / (Number(closedProposalData[selectedProposal].againstVotes) + Number(closedProposalData[selectedProposal].forVotes))} content='APPROVE' />
+                            <ProgressVoting percent={Number(closedProposalData[selectedProposal].againstVotes) / (Number(closedProposalData[selectedProposal].againstVotes) + Number(closedProposalData[selectedProposal].forVotes))} content='REJECT' />
                           </>
                       }
                     </div>

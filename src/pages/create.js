@@ -33,6 +33,7 @@ export default function Create({ account }) {
       console.log(contract);
       await contract.methods.propose(proposalTokenAddress, proposalTargetAddress, `0x${(Number(proposalValue) * 1e18).toString(16)}`, proposalName, proposalDescription).send({ from: account });
       alert('Successfully submitted');
+      window.location.href='/pending'
     } catch (err) {
       alert('Something went wrong!');
       console.log(err);
