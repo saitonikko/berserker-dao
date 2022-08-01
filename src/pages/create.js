@@ -21,7 +21,7 @@ export default function Create({ account }) {
   const [proposalDescription, setProposalDescription] = useState('')
   const [proposalValue, setProposalValue] = useState('')
   const [proposalTargetAddress, setProposlTargetAddress] = useState('')
-  const [proposalTokenAddress, setProposalTokenAddress] = useState(TOKEN_ADDR);
+  const [proposalTokenAddress, setProposalTokenAddress] = useState(null);
 
   const createProposal = async () => {
     if (!account) {
@@ -95,7 +95,7 @@ export default function Create({ account }) {
                   <div className='create-proposal'>
                     <input className='proposal-value' placeholder='What is the value of the project?' onChange={(e) => setProposalValue(e.target.value)} ></input>
                     <input className='proposal-taget' placeholder='What is the address of the target?' onChange={(e) => setProposlTargetAddress(e.target.value)}></input>
-                    <input className='token-address' value={TOKEN_ADDR} placeholder='What is the address of the token?' onChange={(e) => setProposalTokenAddress(e.target.value)}></input>
+                    <input className='token-address' placeholder='What is the address of the token?' onChange={(e) => setProposalTokenAddress(e.target.value)}></input>
                     <div className='submit-box' onClick={createProposal}><img className='submit' alt='' src={Submit}></img></div>
                   </div>
                 </div>

@@ -65,7 +65,8 @@ export default function Pending({ account }) {
   const acceptVote = async () => {
     try {
       await contract.methods.castVote(pendingProposalData[selectedProposal].id, 1).send({ from: account });
-      console.log("You have accepted!")
+      console.log("You have accepted!");
+      window.location.href = "/pending";
     } catch (err) {
       alert("Something went wrong!");
       console.log(err);
@@ -76,7 +77,8 @@ export default function Pending({ account }) {
   const rejectVote = async () => {
     try {
       await contract.methods.castVote(pendingProposalData[selectedProposal].id, 0).send({ from: account });
-      alert("You have rejected!")
+      alert("You have rejected!");
+      window.location.href = "/pending";
     } catch (err) {
       alert("Something went wrong!");
       console.log(err);
@@ -87,7 +89,8 @@ export default function Pending({ account }) {
   const cancelVote = async () => {
     try {
       await contract.methods.cancel(pendingProposalData[selectedProposal].id).send({ from: account });
-      alert("You have canceled!")
+      alert("You have canceled!");
+      window.location.href = "/pending";
     } catch (err) {
       alert("Something went wrong!");
       console.log(err);
@@ -98,7 +101,8 @@ export default function Pending({ account }) {
   const execute = async () => {
     try {
       await contract.methods.execute(pendingProposalData[selectedProposal].id).send({ from: account });
-      alert("You have canceled!")
+      alert("You have executed!");
+      window.location.href = "/pending";
     } catch (err) {
       alert("Something went wrong!");
       console.log(err);
