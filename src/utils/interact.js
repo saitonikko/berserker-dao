@@ -7,7 +7,7 @@ export const connectWallet = async () => {
         try {
             await window.ethereum.request({
                 method: 'wallet_switchEthereumChain',
-                params: [{ chainId: web3.utils.toHex(97) }],
+                params: [{ chainId: web3.utils.toHex(1) }],
             });
         } catch (switchError) {
             if (switchError.code === 4902) {
@@ -58,7 +58,7 @@ export const getCurrentWalletConnected = async () => {
             try {
                 await window.ethereum.request({
                     method: 'wallet_switchEthereumChain',
-                    params: [{ chainId: web3.utils.toHex(97) }],
+                    params: [{ chainId: web3.utils.toHex(1) }],
                 });
             } catch (switchError) {
                 if (switchError.code === 4902) {
