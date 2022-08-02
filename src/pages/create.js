@@ -31,7 +31,7 @@ export default function Create({ account }) {
     try {
       const contract = await getProposalContract();
       console.log(contract);
-      await contract.methods.propose(proposalTokenAddress, proposalTargetAddress, `0x${(Number(proposalValue) * 1e18).toString(16)}`, proposalName, proposalDescription).send({ from: account });
+      await contract.methods.propose(proposalTokenAddress, proposalTargetAddress, `0x${(Number(proposalValue) * 1e6).toString(16)}`, proposalName, proposalDescription).send({ from: account });
       alert('Successfully submitted');
       window.location.href='/pending'
     } catch (err) {
